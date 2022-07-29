@@ -1,0 +1,29 @@
+@import "../../stylesheet/_mixin.scss";
+
+.container {
+  width: 280px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+
+  @include mq(mobile) {
+    width: 440px;
+  }
+
+  @include mq(tablet) {
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 688px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // height: 110vh;
+  }
+
+  @include mq(desktop) {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    align-items:unset;
+  }
+}

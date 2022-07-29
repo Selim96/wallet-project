@@ -1,0 +1,68 @@
+@import "../../stylesheet/_mixin.scss";
+
+.wrapper__chart {
+  width: 100%;
+  padding-top: 40px;
+  @include mq(tablet) {
+    width: 320px;
+    margin-right: 20px;
+    padding-top: 0;
+  }
+}
+
+.title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.5;
+  align-items: start;
+  color: var(--main-text-cl);
+  margin-bottom: 8px;
+  @include mq(tablet) {
+    margin-bottom: 20px;
+  }
+
+  @include mq(desktop) {
+    display: none;
+    margin-bottom: 0;
+  }
+}
+
+.wrapper__doughnut {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 280px;
+
+  @include mq(mobile) {
+    width: 440px;
+    height: 440px;
+  }
+
+  @include mq(tablet) {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+.balance__wrapper {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  color: var(--main-text-cl);
+}
+.symbol {
+  font-weight: 400;
+  font-style: normal;
+  margin-right: 10px;
+}

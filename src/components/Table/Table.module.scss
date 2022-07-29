@@ -1,0 +1,182 @@
+@import "../../stylesheet/_mixin.scss";
+
+.expenses__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 32px;
+  @include mq(mobile) {
+    width: 440px;
+  }
+
+  @include mq(tablet) {
+    width: 350px;
+    padding-top: 40px;
+  }
+
+  @include mq(desktop) {
+    width: 350px;
+    padding-top: 0;
+  }
+}
+.select__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 20px;
+  //   @include mq(mobile) {
+  //     width: 440px;
+  //   }
+
+  @include mq(tablet) {
+    //   width: 336px;
+    flex-direction: row;
+  }
+}
+
+.table__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.12;
+}
+
+.table__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30px;
+  padding-top: 16px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+  background-color: var(--main-bg-cl);
+}
+// .table__list {
+//   overflow: scroll;
+//   max-height: 300px;
+// }
+.tableScrollBox::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(156, 147, 147, 0.1);
+  background-color: transparent;
+  width: 100%;
+}
+
+.tableScrollBox::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+.tableScrollBox::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border: 5px solid var(--bottom-table-row);
+  border-radius: 2px;
+}
+
+.tableScrollBox::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.tableScrollBox {
+  overflow-y: scroll;
+  @include mq(tablet) {
+    max-height: 30vh;
+  }
+
+  @include mq(desktop) {
+    max-height: 42vh;
+  }
+}
+
+.table__list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px var(--bottom-table-row);
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+.table__list::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+.table__list::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border: 2px solid var(--bottom-table-row);
+  border-radius: 5px;
+}
+
+.table__list::-webkit-scrollbar-thumb:hover {
+  background: var(--bottom-table-row);
+}
+
+.table__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dcdcdf;
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+  height: 54px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.table__color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+}
+.table__name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  padding-left: 16px;
+}
+.table__total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
+}
+.table__bottom {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.first {
+  width: 50%;
+  display: inline-block;
+}
+.second__expense {
+  width: 50%;
+  display: inline-block;
+  color: var(--expense-cl);
+  text-align: end;
+}
+.second__income {
+  width: 50%;
+  display: inline-block;
+  color: var(--income-cl);
+  text-align: end;
+}
+
+.text__messeng {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--main-text-cl);
+  text-align: center;
+}

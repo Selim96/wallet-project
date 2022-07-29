@@ -1,0 +1,52 @@
+@import "../../stylesheet/shared.scss";
+
+.balance {
+  box-sizing: border-box;
+  height: 80px;
+  width: 280px;
+  padding: 8px 40px 13px 20px;
+  margin-bottom: 30px;
+  background: var(--main-bg-cl);
+  border-radius: 30px;
+  @include mq(mobile) {
+    width: 400px;
+    padding-left: 40px;
+  }
+  @include mq(tablet) {
+    width: 334px;
+    padding-left: 40px;
+    margin-bottom: 0px;
+  }
+  @include mq(desktop) {
+    width: 348px;
+    margin-bottom: 0px;
+  }
+}
+
+.balanceTitle {
+  text-align: start;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--secondary-text-cl);
+}
+
+.balanceValue {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  color: var(--main-text-cl);
+  @include mq(mobile) {
+    font-size: 30px;
+  }
+}
+
+.symbol {
+  font-weight: 400;
+  font-style: normal;
+  margin-right: 10px;
+}

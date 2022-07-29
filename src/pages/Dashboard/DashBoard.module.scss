@@ -1,0 +1,151 @@
+@import "stylesheet/_mixin.scss";
+
+.main {
+  height: 100%;
+  // flex-grow: 1;
+  // background-color: var(--auth-bg-cl);
+  background-image: url(../../bc-image/Rectangle.png);
+  background-size: cover;
+  background-attachment: fixed;
+  @include mq(s-mobile) {
+    overflow: scroll;
+    height: calc(100vh - 73px);
+  }
+  @include mq(mobile) {
+    height: calc(100vh - 85px);
+  }
+  @include mq(tablet) {
+    height: calc(100vh - 85px);
+    align-items: center;
+    background-image: url(../../bc-image/Group1-tablet.webp);
+    background-repeat: no-repeat;
+    // background-position: left bottom;
+    background-size: cover;
+
+    @include retina() {
+      background-image: url(../../bc-image/Group2-tablet.webp);
+    }
+  }
+
+  @include mq(desktop) {
+    align-items: unset;
+    flex-direction: row;
+    background-image: url(../../bc-image/Group1-desktop.webp);
+    background-repeat: no-repeat;
+    // background-position: left bottom;
+
+    @include retina() {
+      background-image: url(../../bc-image/Group2-desktop.webp);
+      // background-size: 35em;
+    }
+    @include mq(tablet) {
+      overflow: auto;
+      height: calc(100vh - 85px);
+      align-items: center;
+      background-image: url(../../bc-image/Group1-tablet.webp);
+      background-repeat: no-repeat;
+      // background-position: left bottom;
+      background-size: cover;
+
+      @include retina() {
+        background-image: url(../../bc-image/Group2-tablet.webp);
+      }
+    }
+
+    @include mq(desktop) {
+      align-items: unset;
+      flex-direction: row;
+      background-image: url(../../bc-image/Group1-desktop.webp);
+      background-repeat: no-repeat;
+      // background-position: left bottom;
+
+      @include retina() {
+        background-image: url(../../bc-image/Group2-desktop.webp);
+        // background-size: 35em;
+      }
+    }
+  }
+}
+
+.Dashboard {
+  // height: 100%;
+  padding-top: 13px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: none;
+  background-attachment: fixed;
+  @include mq(tablet) {
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    // background-image: url(../../bc-image/Group1-tablet.webp);
+    // background-repeat: no-repeat;
+    // background-size:cover;
+    // @include retina() {
+    //     background-image:url(../../bc-image/Group2-tablet.webp);
+    // }
+  }
+  @include mq(desktop) {
+    align-items: unset;
+    flex-direction: row;
+    padding-top: 0px;
+    // background-image: url(../../bc-image/Group1-desktop.webp);
+    //     background-repeat: no-repeat;
+    // @include retina() {
+    //     background-image: url(../../bc-image/Group2-desktop.webp);
+    //     }
+  }
+}
+
+.Dashboard__left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq(tablet) {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @include mq(desktop) {
+    align-items: flex-start;
+    width: 380px;
+    height: calc(100vh - 125px);
+    justify-content: flex-start;
+    flex-direction: column;
+    border-right: 2px solid var(--auth-bg-cl);
+    // box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.05),
+    //   1px 0px 0px rgba(255, 255, 255, 0.6);
+    margin-bottom: 0;
+    padding-top: 40px;
+    padding-right: 30px;
+  }
+}
+
+.Dashboard__rigth {
+  height: 100%;
+  width: 100%;
+  @include mq(tablet) {
+  }
+  @include mq(desktop) {
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+}
+
+.Dashboard__nav {
+  margin-right: 20px;
+  @include mq(tablet) {
+    padding-top: 10px;
+  }
+  @include mq(desktop) {
+    padding-top: 0px;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}

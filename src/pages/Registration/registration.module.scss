@@ -1,0 +1,189 @@
+@import "../../stylesheet/shared.scss";
+
+.registerBg {
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: cover;
+
+    @include mq(tablet) {
+        background-image: url('../../assets/images/imgFrameRegister.png');
+    }
+    @include mq(desktop) {
+        background-color: rgba(231, 234, 242, 1);
+        background-image: url('../../assets/images/Group320.png');
+    }
+
+    // @media screen and (min-width: 768px) and (max-width: 1279px) {
+    //     background-image: url('../../assets/images/imgFrameRegister.png');
+    //     background-size: cover;
+    //     height: 100%;
+    // }
+
+    // @media screen and (min-width: 1280px) {
+    //     background-image: url('../../assets/images/imgFrameRegisterbig.png');
+    //     background-color: black;
+    // }
+
+    .containerForm {
+            width: 280px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 0 auto;
+
+        @media screen and (max-width: 1279px) {
+            width: 440px;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
+
+.mainPage {
+    display: flex;
+
+    height: 100vh;
+
+    @media screen and (max-width: 1279px) {
+        flex-direction: column;
+        background-size: cover;
+    }
+
+    .left {
+
+        // width: 560px;
+        
+        // padding-top: 150px;
+        // padding-right: 50px;
+
+        transition: 1.5s;
+        animation: left 1s 1;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+        
+        @include mq(tablet) {
+            padding-top: 60px;
+        }
+
+        @include mq(desktop) {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__position {
+            @include mq(desktop) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            @include mq(tablet) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @keyframes left {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @media screen and (max-width: 1279px) {
+            display: flex;
+            align-items: center;
+
+            // padding-top: 60px;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+
+        .img {
+            width: 450px;
+            height: 410px;
+            
+            @media screen and (max-width: 1279px) {
+                width: 274px;
+                height: 250px;
+                margin-right: 40px;
+            }
+            // @if max-heigth: 999px {
+
+            // }
+            // @media screen and (max-heigth: 999px) {
+            //     width: 0;
+            //     height: 0;
+            //     margin-right: 0;
+            // }
+            // @include mq(tablet) {
+            //     width: 274px;
+            //         height: 250px;
+            //         margin-right: 40px;
+            //     @media screen and (max-heigth: 999px) {
+            //             width: 0;
+            //             height: 0;
+            //             margin-right: 0;
+            //         }
+            // }
+        }
+
+        .title {
+            margin-top: 30px;
+
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 45px;
+            text-align: center;
+
+            color: var(--main-text-cl);
+        }
+    }
+
+    .right {
+        
+        // padding-top: 136px;
+        // padding-left: 95px;
+        // &__formbox {
+        //     transition: 1.5s;
+        //     animation: mainAnimation 1s 1;
+        //     animation-fill-mode: forwards;
+        //     animation-delay: 0s;
+        // }
+                // transition: 1.5s;
+                // animation: mainAnimation 1s 1;
+                // animation-fill-mode: forwards;
+                // animation-delay: 0s;
+    @include mq(desktop) {
+        // flex-grow: 1;
+        width: 56vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(50px);
+        background-color: rgb(255, 255, 255, 0.4);
+    }
+
+        @media screen and (max-width: 1279px) {
+            margin-top: 50px;
+            padding-left: 0;
+            padding-top: 0px;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,281 @@
+@import "../../stylesheet/_mixin.scss";
+// мобильная версия
+.noTransactions {
+  &_title {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.mobailTrList {
+  color: inherit;
+}
+
+.mobailTrItem {
+  width: 280px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  display: flex;
+  @include mq(mobile) {
+    width: 400px;
+  }
+  &_INCOME {
+    composes: mobailTrItem;
+    &::before {
+      content: "";
+      width: 5px;
+      background-color: var(--income-cl);
+    }
+  }
+  &_EXPENSE {
+    composes: mobailTrItem;
+    &::before {
+      content: "";
+      width: 5px;
+      background-color: var(--expense-cl);
+    }
+  }
+}
+
+.mobailTrItem__list {
+  flex-grow: 1;
+}
+
+.mobailTrItem__row {
+  height: 47px;
+  padding-left: 15px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--bottom-table-row);
+}
+
+.mobailTrItem__cell_value {
+  font-weight: 400;
+  font-size: 16px;
+  &_INCOME {
+    composes: mobailTrItem__cell_value;
+    color: var(--income-cl);
+  }
+  &_EXPENSE {
+    composes: mobailTrItem__cell_value;
+    color: var(--expense-cl);
+  }
+}
+
+.mobailTrItem__cell {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.47;
+}
+
+// таблет и десктоп версии==========================
+.tableTrList {
+  @include mq(tablet) {
+    width: 100%;
+  }
+}
+
+.table {
+  background-color: #fff;
+  border-radius: 30px;
+  height: 58px;
+}
+
+.tableHeader {
+  text-align: left;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.47;
+  padding-left: 10px;
+  padding-right: 10px;
+  &:nth-child(1) {
+    padding-left: 20px;
+    width: 104px;
+  }
+  &:last-child {
+    padding-right: 20px;
+    text-align: right;
+    width: 130px;
+  }
+  @include mq(tablet) {
+    width: 114px;
+    &:nth-child(2) {
+      width: 60px;
+    }
+    &:nth-child(3) {
+      width: 134px;
+    }
+    &:nth-child(4) {
+      width: 148px;
+    }
+    &:nth-child(5) {
+      width: 118px;
+      text-align: right;
+    }
+  }
+  @include mq(desktop) {
+    width: 116px;
+    &:nth-child(1) {
+      width: 106px;
+    }
+    &:nth-child(2) {
+      width: 60px;
+    }
+    &:nth-child(3) {
+      width: 142px;
+    }
+    &:nth-child(4) {
+      width: 146px;
+    }
+  }
+}
+
+.tableScrollBox::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px var(--bottom-table-row);
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+.tableScrollBox::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+.tableScrollBox::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border: 2px solid var(--bottom-table-row);
+  border-radius: 5px;
+}
+
+.tableScrollBox::-webkit-scrollbar-thumb:hover {
+  background: var(--bottom-table-row);
+}
+
+.tableScrollBox {
+  overflow-y: scroll;
+  @include mq(tablet) {
+    max-height: 45vh;
+  }
+
+  @include mq(desktop) {
+    max-height: 65vh;
+  }
+}
+
+.dataTable {
+  width: 678px;
+  @include mq(desktop) {
+    width: 700px;
+  }
+}
+
+.tableBody {
+  border-collapse: collapse;
+}
+
+.tableRow {
+  height: 54px;
+  box-shadow: 0px 1px 0px var(--bottom-table-row);
+}
+
+.tableData {
+  text-align: left;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.47;
+  padding-right: 10px;
+  padding-left: 10px;
+  &:nth-child(1) {
+    padding-left: 20px;
+    width: 104px;
+  }
+  &:last-child {
+    padding-right: 10px;
+    text-align: right;
+    width: 120px;
+  }
+  &_INCOME {
+    composes: tableData;
+    color: var(--income-cl);
+    text-align: right;
+  }
+
+  &_EXPENSE {
+    composes: tableData;
+    color: var(--expense-cl);
+    text-align: right;
+  }
+  @include mq(tablet) {
+    width: 114px;
+    &:nth-child(1) {
+      width: 106px;
+    }
+    &:nth-child(2) {
+      width: 60px;
+      text-align: center;
+    }
+    &:nth-child(3) {
+      width: 134px;
+    }
+    &:nth-child(4) {
+      width: 148px;
+    }
+    &:nth-child(5) {
+      width: 118px;
+      text-align: right;
+      font-weight: 700;
+    }
+  }
+
+  @include mq(desktop) {
+    width: 116px;
+    &:nth-child(2) {
+      width: 60px;
+    }
+    &:nth-child(3) {
+      width: 142px;
+    }
+    &:nth-child(4) {
+      width: 146px;
+    }
+  }
+}
+
+.noTransactions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+.noTransactions h2 {
+  text-align: center;
+}
+svg.react__icon:hover {
+  fill: var(--accent-inactive-cl);
+}
+svg.react__icon:focus {
+  fill: var(--accent-inactive-cl);
+}
+svg.react__icon {
+  animation: animate125 3000ms 1 500ms;
+  margin-top: 20px;
+  fill: var(--accent-active-cl);
+  transition: all 250ms linear;
+}
+@keyframes animate125 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

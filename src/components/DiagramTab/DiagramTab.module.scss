@@ -1,0 +1,81 @@
+@import "../../stylesheet/_mixin.scss";
+.section {
+  @include mq(s-mobile) {
+    width: 100%;
+    display: flex;
+  }
+  @include mq(mobile) {
+    width: 100%;
+    display: flex;
+  }
+  @include mq(tablet) {
+    display: flex;
+  }
+  @include mq(desktop) {
+    width: 715px;
+    flex-wrap: wrap;
+  }
+}
+.title {
+  display: none;
+  @include mq(desktop) {
+    display: block;
+    width: 100%;
+    height: 65px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.5;
+    align-items: start;
+    color: var(--main-text-cl);
+  }
+}
+.wrapper {
+  width: 100%;
+  @include mq(tablet) {
+    display: flex;
+  }
+}
+
+.noTransactions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+.noTransactions h2 {
+  text-align: center;
+}
+// Підставка
+svg.react__icon g:nth-child(1) {
+  fill: var(--main-text-cl);
+}
+// Стріла
+svg.react__icon g:last-child {
+  fill: var(--accent-active-cl);
+  transition: all 250ms linear;
+}
+svg.react__icon:hover g:last-child {
+  fill: var(--accent-inactive-cl);
+}
+svg.react__icon:focus g:last-child {
+  fill: var(--accent-inactive-cl);
+}
+svg.react__icon {
+  animation: animate125 3000ms 1 500ms;
+  margin-top: 20px;
+}
+@keyframes animate125 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

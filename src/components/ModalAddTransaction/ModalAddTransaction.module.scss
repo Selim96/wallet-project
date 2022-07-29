@@ -1,0 +1,342 @@
+@import "../../stylesheet/shared.scss";
+.transaction {
+  padding: 20px 0px;
+  @include mq(mobile) {
+    padding: 30px 35px;
+  }
+  @include mq(tablet) {
+    padding: 40px 70px;
+  }
+  position: relative;
+}
+.button {
+  &Close {
+    display: none;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    @include mq(mobile) {
+      display: block;
+    }
+  }
+}
+.form {
+  &__title {
+    font-size: 24px;
+    font-family: "Poppins";
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 40px;
+    @include mq(mobile) {
+      font-size: 30px;
+    }
+  }
+}
+.checkbox {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &Label {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+  }
+  &Label input[type="checkbox"] {
+    display: none;
+  }
+  &Label &Switch {
+    position: absolute;
+    cursor: pointer;
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: background-color 250ms ease;
+  }
+
+  &Label &Switch::before {
+    position: absolute;
+    content: "";
+    background-image: url("../Icon/minus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    left: -5px;
+    top: -3px;
+    width: 44px;
+    height: 44px;
+    background-color: var(--expense-cl);
+    border-radius: 50%;
+    box-shadow: 0px 6px 15px rgba(255, 101, 150, 0.5);
+    transition: transform 250ms ease;
+    transform: translateX(40px);
+  }
+  &Label input[type="checkbox"]:checked + &Switch::before {
+    content: "";
+    background-image: url("../Icon/plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--income-cl);
+    box-shadow: 0px 6px 15px rgba(36, 204, 167, 0.5);
+    transform: translateX(0);
+  }
+  &Income {
+    margin-right: 20px;
+  }
+  &Expense {
+    margin-left: 20px;
+  }
+  &Income,
+  &Expense {
+    font-family: "Circe", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--secondary-text-cl);
+    transition: all 250ms ease;
+  }
+  &Checked {
+    &.checkboxIncome {
+      color: var(--income-cl);
+    }
+    &.checkboxExpense {
+      color: var(--expense-cl);
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  @include mq(mobile) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  @include mq(tablet) {
+    justify-content: space-between;
+  }
+}
+.money {
+  width: 280px;
+  height: 32px;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  text-align: left;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 40px;
+  @include mq(mobile) {
+    margin-bottom: 0px;
+    text-align: center;
+    width: 180px;
+  }
+  &::placeholder {
+    font-family: "Circe", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: left;
+    color: var(--secondary-text-cl);
+    @include mq(mobile) {
+      text-align: center;
+    }
+  }
+  &Wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    @include mq(tablet) {
+      justify-content: start;
+    }
+  }
+  &Error {
+    color: var(--expense-cl);
+    position: absolute;
+    top: 35px;
+  }
+}
+.date {
+  & input {
+    font-family: "Circe";
+    width: 280px;
+    height: 32px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #000000;
+    padding-left: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #e0e0e0;
+    @include mq(mobile) {
+      max-width: 160px;
+    }
+  }
+  &Wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &Icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 2px;
+    right: 10px;
+    color: var(--accent-active-cl);
+    pointer-events: none;
+    @include mq(mobile) {
+      right: 5px;
+    }
+}
+}
+.comment {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  min-width: 280px;
+  height: 32px;
+  color: var(--main-text-cl);
+  font-family: "Circe", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  @include mq(mobile) {
+    padding-bottom: 0px;
+    width: 400px;
+  }
+  &::placeholder {
+    color: var(--secondary-text-cl);
+  }
+
+  @include mq(tablet) {
+    width: 100%;
+  }
+  &Wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: none;
+    justify-content: center;
+
+  }
+  &Error{
+        color: var(--expense-cl);
+    position: absolute;
+    bottom:180px;
+    @include mq(mobile) {
+    bottom: 170px;
+    }
+    @include mq(tablet){
+      bottom:180px;
+    }
+
+  }
+}
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btnSubmit {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  height: 50px;
+  width: 300px;
+  border-radius: 20px;
+  color: var(--main-bg-cl);
+  background-color: var(--income-cl);
+  transition: all 250ms ease;
+  &:hover,
+  &:focus {
+    background-color: var(--income-hover-cl);
+  }
+  &:first-child {
+    margin-bottom: 20px;
+  }
+}
+.btnCancel {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  height: 50px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: var(--main-bg-cl);
+  border: 1px solid var(--accent-active-cl);
+  color: var(--accent-active-cl);
+  transition: all 250ms ease;
+  &:hover,
+  &:focus {
+    background-color: var(--income-hover-cl);
+    color: var(--main-bg-cl);
+    border: 1px solid transparent;
+  }
+  &:first-child {
+    margin-bottom: 20px;
+  }
+}
+
+.visuallyHidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+.category{
+  display: flex;
+  justify-content: center;
+ @include mq(tablet) {
+   justify-content: normal;
+ }
+
+  &Error {
+    top: 206px;
+  position: absolute;
+  color: var(--expense-cl);
+  @include mq(mobile) {
+    top:224px;
+  }
+  @include mq(tablet) {
+    // left: 71px;
+    top:234px;
+  }
+}
+}
+

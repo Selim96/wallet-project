@@ -1,0 +1,112 @@
+@import "../../stylesheet/shared.scss";
+
+.form {
+  width: 540px;
+  display: block;
+  padding-right: 65px;
+  padding-left: 65px;
+  padding-top: 40px;
+  padding-bottom: 43px;
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+  transition: 1.5s;
+  animation: mainAnimation 1s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+
+  @media screen and (max-width: 767px) {
+    width: 280px;
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-right: 20px;
+  }
+
+  .title {
+    font-family: Poppins;
+    display: inline;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.5;
+    color: var(--main-text-cl);
+  }
+
+  .img {
+    width: 40px;
+    height: 40px;
+    display: inline;
+    margin-right: 20px;
+  }
+
+  .MuiInputBase-input.MuiInputLabel-root {
+    width: 100%;
+  }
+
+  .MuiInputLabel-root {
+    font-family: Circe;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--secondary-text-cl);
+    width: 100%;
+  }
+
+  .MuiSvgIcon-root {
+    color: var(--secondary-text-cl);
+  }
+
+  .textField {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .loginFormBtnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 36px;
+  }
+
+  .btnForm {
+    width: 300px;
+    margin-top: 20px;
+    padding-top: 16px;
+    padding-bottom: 13px;
+    border-radius: 20px;
+    border: 1px solid #4a56e2;
+    color: #4a56e2;
+    background-color: white;
+    font-family: Circe;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+
+    @media screen and (max-width: 767px) {
+      width: 280px;
+    }
+  }
+
+  .current {
+    background-color: var(--income-cl);
+    border: 1px solid var(--income-cl);
+    color: white;
+  }
+  .btnForm:hover {
+    background-color: var(--income-cl);
+    border: 1px solid var(--income-cl);
+    color: white;
+  }
+}

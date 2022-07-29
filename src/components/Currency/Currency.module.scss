@@ -1,0 +1,156 @@
+@import "../../stylesheet/shared.scss";
+
+.currency {
+  position: relative;
+
+  min-height: 174px;
+  align-items: center;
+  border-radius: 30px 30px 30px 30px;
+  color: var(--main-bg-cl);
+  background-image: url("./img/currency-sm.png"),
+    linear-gradient(to bottom, var(--accent-active-cl), var(--accent-active-cl));
+  @include retina {
+    background-image: url("./img/currency-sm-2x.png"),
+      linear-gradient(
+        to bottom,
+        var(--accent-active-cl),
+        var(--accent-active-cl)
+      );
+  }
+  @include mq(tablet) {
+    background-image: url("./img/currency-md.png"),
+      linear-gradient(
+        to bottom,
+        var(--accent-active-cl),
+        var(--accent-active-cl)
+      );
+    @include retina {
+      background-image: url("./img/currency-md-2x.png"),
+        linear-gradient(
+          to bottom,
+          var(--accent-active-cl),
+          var(--accent-active-cl)
+        );
+    }
+  }
+  @include mq(desktop) {
+    background-image: url("./img/currency-lg.png"),
+      linear-gradient(
+        to bottom,
+        var(--accent-active-cl),
+        var(--accent-active-cl)
+      );
+    @include retina {
+      background-image: url("./img/currency-lg-2x.png"),
+        linear-gradient(
+          to bottom,
+          var(--accent-active-cl),
+          var(--accent-active-cl)
+        );
+    }
+  }
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right bottom;
+  @include mq(mobile-only) {
+    margin: 0 auto;
+  }
+
+  @include mq(s-mobile) {
+    width: 280px;
+  }
+  @include mq(tablet) {
+    width: 334px;
+    height: 174px;
+  }
+  @include mq(desktop) {
+    width: 348px;
+    min-height: 347px;
+  }
+}
+
+.currencyHead {
+  display: flex;
+  align-items: center;
+  background-color: var(--accent-inactive-cl);
+  height: 50px;
+  border-radius: 30px 30px 0 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include mq(tablet) {
+    width: 334px;
+  }
+  @include mq(desktop) {
+    width: unset;
+    height: 60px;
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+}
+
+.currencyHeader {
+  width: calc(100% / 3);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  &:first-child {
+    text-align: left;
+  }
+  &:last-child {
+    text-align: right;
+  }
+}
+.currencyBody {
+  min-height: 96px;
+  padding-top: 12px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include mq(tablet) {
+    width: 334px;
+    padding-top: 16px;
+    padding-bottom: 20px;
+  }
+  @include mq(desktop) {
+    width: unset;
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+}
+.currencyRow {
+  display: flex;
+  justify-content: space-between;
+  &:not(:last-child) {
+    margin-bottom: 12px;
+    @include mq(desktop) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.currencyData {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.error {
+  width: 80%;
+  height: 150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

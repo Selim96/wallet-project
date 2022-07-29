@@ -1,0 +1,71 @@
+@import "../../stylesheet/_mixin.scss";
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding-top: 15px;
+  margin-bottom: 10px;
+  @include mq(tablet) {
+    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+    @include mq(desktop) {
+      margin-bottom: 30px;
+    }
+}
+
+.icon__wrapper {
+  width: 38px;
+  height: 38px;
+  background-color: var(--accent-inactive-cl);
+  transition: all 250ms linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  @include mq(tablet) {
+    width: 24px;
+    height: 24px;
+  }
+}
+.icon__wrapper:hover,
+.icon__wrapper:focus {
+  background-color: var(--accent-active-cl);
+}
+
+.nav__link {
+  @include mq(tablet) {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+}
+.nav__link:not(:last-child) {
+  margin-right: 33px;
+  @include mq(tablet) {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+}
+
+.active__link {
+  composes: nav__link;
+  font-weight: 700;
+  & .icon__wrapper {
+    background-color: var(--accent-active-cl);
+    filter: drop-shadow(0px 3px 10px rgba(74, 86, 226, 0.5));
+  }
+}
+
+.text {
+  font-family: Poppins;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-left: 20px;
+  transition: all 250ms linear;
+}
+.text:hover,
+.text:focus {
+  color: var(--accent-active-cl);
+}
