@@ -69,6 +69,7 @@
 
 .Dashboard {
   // height: 100%;
+  position: relative;
   padding-top: 13px;
   padding-bottom: 80px;
   display: flex;
@@ -78,6 +79,7 @@
   background-image: none;
   background-attachment: fixed;
   @include mq(tablet) {
+    position: static;
     align-items: center;
     padding-top: 20px;
     padding-bottom: 0px;

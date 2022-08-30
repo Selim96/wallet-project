@@ -1,6 +1,7 @@
 import React, { useEffect, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
+import { useInView } from "react-intersection-observer";
 import Media from "react-media";
 import s from "./DashBoard.module.scss";
 import {
@@ -16,6 +17,7 @@ import Container from "components/Container/Container";
 import Loader from "components/Loader";
 import ModalAddTransaction from "../../components/ModalAddTransaction/ModalAddTransaction";
 import ButtonAddTransactions from "components/ButtonAddTransactions";
+import UpButton from "components/UpButton";
 import financeSelectors from "redux/finance/finance-selectors";
 const HomeTab = lazy(() =>
   import("components/HomeTab" /*webpackChankName: "HomeTab" */)
@@ -37,6 +39,10 @@ const Dashboard = () => {
     dispatch(refresh());
     dispatch(allTransactions());
   }, [dispatch]);
+
+  const { ref, inView } = useInView({
+    threshold: 0
+  });
 
   useEffect(() => {
     if (!categories) dispatch(getCategories());
@@ -69,6 +75,7 @@ const Dashboard = () => {
                               <Balance />
                               <HomeTab />
                               <ButtonAddTransactions />
+                              <UpButton inView={inView} refin={ref} />
                             </>
                           }
                         />
