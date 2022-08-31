@@ -19,7 +19,7 @@ const Navigation = () => {
         {(matches) => (
           <Fragment>
             {matches.small && (
-              <nav className={s.nav}>
+              <nav className={s.nav} id='naviget'>
                 <NavLink to="/home" className={toggle}>
                   <div className={s.icon__wrapper}>
                     <AiFillHome
