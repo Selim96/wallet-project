@@ -66,7 +66,7 @@ const Dashboard = () => {
                 {matches.small && (
                   <>
                     <Navigation />
-                    <UpButton inView={inView} refin={ref} />
+                    
                     <Suspense fallback={<Loader />}>
                       <Routes>
                         <Route
@@ -76,11 +76,17 @@ const Dashboard = () => {
                               <Balance />
                               <HomeTab />
                               <ButtonAddTransactions />
+                              <UpButton inView={inView} refin={ref} />
                             </>
                           }
                         />
                         <Route path="/currency" element={<Currency />} />
-                        <Route path="/diagram" element={<DiagramTab />} />
+                          <Route path="/diagram" element={
+                            <>
+                              <DiagramTab />
+                              <UpButton inView={inView} refin={ref} />
+                            </>
+                            } />
                       </Routes>
                     </Suspense>
                   </>
